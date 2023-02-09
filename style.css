@@ -16,7 +16,7 @@ section {
 }
 .container {
   width: 90%;
-  max-width: 500px;
+  max-width: 400px;
   background-color: rgb(39, 55, 59);
   border-radius: 8px;
   overflow: hidden;
@@ -33,7 +33,7 @@ section {
 .display-1 {
   opacity: 0.4;
   font-size: 20px;
-  height: 20px;
+  height: 40px;
   overflow: hidden;
 }
 .temp-result {
