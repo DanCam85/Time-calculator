@@ -21,7 +21,7 @@ numbersEl.forEach((number) => {
     }
     dis2Num += e.target.innerText;
     display2El.innerText = dis2Num;
-    numberEl.blur();
+    numbersEl.blur();
     
   });
 });
@@ -47,6 +47,7 @@ function clearVar(name = "") {
   display2El.innerText = "";
   dis2Num = "";
   tempResultEl.innerText = result;
+  clearVar.blur();
 }
 
 function mathOperation() {
