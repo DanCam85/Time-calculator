@@ -14,6 +14,7 @@ let haveDot = false;
 
 numbersEl.forEach((number) => {
   number.addEventListener("click", (e) => {
+    event.preventDefault();
     if (e.target.innerText === "." && !haveDot) {
       haveDot = true;
     } else if (e.target.innerText === "." && haveDot) {
@@ -31,6 +32,7 @@ operationEl.forEach((operation) => {
     if (!dis2Num) return;
     haveDot = false;
     const operationName = e.target.innerText;
+    event.preventDefault();
     if (dis1Num && dis2Num && lastOperation) {
       mathOperation();
     } else {
@@ -47,7 +49,7 @@ function clearVar(name = "") {
   display2El.innerText = "";
   dis2Num = "";
   tempResultEl.innerText = result;
-  
+  event.preventDefault();
 }
 
 function mathOperation() {
@@ -87,12 +89,14 @@ clearAllEl.addEventListener("click", () => {
   display2El.innerText = "";
   result = "";
   tempResultEl.innerText = "";
+  event.preventDefault();
   
 });
 
 clearLastEl.addEventListener("click", () => {
   display2El.innerText = "";
   dis2Num = "";
+  event.preventDefault();
 });
 
 window.addEventListener("keydown", (e) => {
