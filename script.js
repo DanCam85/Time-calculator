@@ -14,7 +14,7 @@ let haveDot = false;
 
 numbersEl.forEach((number) => {
   number.addEventListener("click", (e) => {
-    event.preventDefault();
+    
     if (e.target.innerText === "." && !haveDot) {
       haveDot = true;
     } else if (e.target.innerText === "." && haveDot) {
@@ -22,6 +22,7 @@ numbersEl.forEach((number) => {
     }
     dis2Num += e.target.innerText;
     display2El.innerText = dis2Num;
+    event.preventDefault();
     
     
   });
@@ -123,6 +124,7 @@ window.addEventListener("keydown", (e) => {
   } else if (e.key === "Enter" || e.key === "=") {
     clickEqual();
   }
+  event.preventDefault();
   
 });
 function clickButtonEl(key) {
@@ -141,12 +143,7 @@ function clickOperation(key) {
 }
 function clickEqual() {
   equalEl.click();
+event.preventDefault();
 }
 
-function convertToTime() {
-  let hours = parseFloat(Math.floor(display2El.value / 60));
-  let minutes = parseFloat(display2El.value % 60);
-  let message =
-    (display2El.innerHTML = `${hours} hours and ${minutes} minutes`);
-  return message;
-}
+
