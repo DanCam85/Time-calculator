@@ -21,7 +21,6 @@ numbersEl.forEach((number) => {
     }
     dis2Num += e.target.innerText;
     display2El.innerText = dis2Num;
-    // console.log();
   });
 });
 
@@ -38,7 +37,6 @@ operationEl.forEach((operation) => {
     }
     clearVar(operationName);
     lastOperation = operationName;
-    console.log(result);
   });
 });
 function clearVar(name = "") {
@@ -110,16 +108,13 @@ window.addEventListener("keydown", (e) => {
     e.key === "."
   ) {
     clickButtonEl(e.key);
-    // console.log(e.key)
   } else if (e.key === "+" || e.key === "-" || e.key === "/" || e.key === "%") {
     clickOperation(e.key);
   } else if (e.key === "*") {
     clickOperation("x");
-    // console.log(e.key)
   } else if (e.key == "Enter" || e.key === "=") {
     clickEqual();
   }
-  // console.log(e.key)
 });
 function clickButtonEl(key) {
   numbersEl.forEach((button) => {
