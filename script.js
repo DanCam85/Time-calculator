@@ -21,7 +21,7 @@ numbersEl.forEach((number) => {
     }
     dis2Num += e.target.innerText;
     display2El.innerText = dis2Num;
-    event.preventDefault();
+    // console.log();
   });
 });
 
@@ -38,6 +38,7 @@ operationEl.forEach((operation) => {
     }
     clearVar(operationName);
     lastOperation = operationName;
+    console.log(result);
   });
 });
 function clearVar(name = "") {
@@ -86,7 +87,6 @@ clearAllEl.addEventListener("click", () => {
   display2El.innerText = "";
   result = "";
   tempResultEl.innerText = "";
-  event.preventDefault();
 });
 
 clearLastEl.addEventListener("click", () => {
@@ -110,14 +110,16 @@ window.addEventListener("keydown", (e) => {
     e.key === "."
   ) {
     clickButtonEl(e.key);
+    // console.log(e.key)
   } else if (e.key === "+" || e.key === "-" || e.key === "/" || e.key === "%") {
     clickOperation(e.key);
   } else if (e.key === "*") {
     clickOperation("x");
-  } else if (e.key === "Enter" || e.key === "=") {
+    // console.log(e.key)
+  } else if (e.key == "Enter" || e.key === "=") {
     clickEqual();
   }
-  event.preventDefault();
+  // console.log(e.key)
 });
 function clickButtonEl(key) {
   numbersEl.forEach((button) => {
@@ -135,5 +137,12 @@ function clickOperation(key) {
 }
 function clickEqual() {
   equalEl.click();
-  event.preventDefault();
+}
+
+function convertToTime() {
+  let hours = parseFloat(Math.floor(display2El.value / 60));
+  let minutes = parseFloat(display2El.value % 60);
+  let message =
+    (display2El.innerHTML = `${hours} hours and ${minutes} minutes`);
+  return message;
 }

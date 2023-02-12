@@ -3,10 +3,11 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 html {
   font-family: "Montserrat", sans-serif;
 }
-body {
+section {
   background-color: rgb(18, 26, 31);
   text-align: center;
 }
@@ -32,6 +33,7 @@ main {
   align-items: center;
   justify-content: center;
 }
+
 .container {
   width: 90%;
   max-width: 400px;
@@ -39,6 +41,7 @@ main {
   border-radius: 8px;
   overflow: hidden;
 }
+
 .display {
   background-color: rgb(182, 182, 182);
   height: 100px;
@@ -48,12 +51,20 @@ main {
   font-size: 30px;
   position: relative;
 }
+
+@media only screen and (max-width: 600px) {
+  .display {
+    font-size: 20px;
+  }
+}
+
 .display-1 {
   opacity: 0.4;
   font-size: 20px;
-  height: 20px;
+  height: 30px;
   overflow: hidden;
 }
+
 .temp-result {
   position: absolute;
   bottom: 0;
@@ -61,11 +72,13 @@ main {
   font-size: 20px;
   opacity: 0.3;
 }
+
 .all_button {
   color: whitesmoke;
   display: grid;
   grid-template: repeat(4, 1fr) / repeat(4, 1fr);
 }
+
 .button {
   border: 0.5px solid rgba(92, 92, 92, 0.137);
   display: inline-block;
@@ -77,12 +90,15 @@ main {
   font-size: 30px;
   cursor: pointer;
 }
+
 .button:hover {
   background-color: rgb(30, 43, 46);
 }
+
 .btn-0 {
   grid-column: 1/3;
 }
+
 .all-clear {
   grid-column: 1/3;
 }
