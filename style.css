@@ -6,9 +6,27 @@
 html {
   font-family: "Montserrat", sans-serif;
 }
-section {
+body {
   background-color: rgb(18, 26, 31);
-  min-height: 100vh;
+  text-align: center;
+}
+
+.intro {
+  text-align: center;
+  color: whitesmoke;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.intro-text {
+  padding: 20px;
+}
+
+main {
   width: 100%;
   display: flex;
   align-items: center;

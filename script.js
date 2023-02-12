@@ -21,7 +21,7 @@ numbersEl.forEach((number) => {
     }
     dis2Num += e.target.innerText;
     display2El.innerText = dis2Num;
-    // console.log();
+    event.preventDefault();
   });
 });
 
@@ -30,6 +30,7 @@ operationEl.forEach((operation) => {
     if (!dis2Num) return;
     haveDot = false;
     const operationName = e.target.innerText;
+    event.preventDefault();
     if (dis1Num && dis2Num && lastOperation) {
       mathOperation();
     } else {
@@ -37,7 +38,6 @@ operationEl.forEach((operation) => {
     }
     clearVar(operationName);
     lastOperation = operationName;
-    console.log(result);
   });
 });
 function clearVar(name = "") {
@@ -46,6 +46,7 @@ function clearVar(name = "") {
   display2El.innerText = "";
   dis2Num = "";
   tempResultEl.innerText = result;
+  event.preventDefault();
 }
 
 function mathOperation() {
@@ -85,11 +86,13 @@ clearAllEl.addEventListener("click", () => {
   display2El.innerText = "";
   result = "";
   tempResultEl.innerText = "";
+  event.preventDefault();
 });
 
 clearLastEl.addEventListener("click", () => {
   display2El.innerText = "";
   dis2Num = "";
+  event.preventDefault();
 });
 
 window.addEventListener("keydown", (e) => {
@@ -107,16 +110,14 @@ window.addEventListener("keydown", (e) => {
     e.key === "."
   ) {
     clickButtonEl(e.key);
-    // console.log(e.key)
   } else if (e.key === "+" || e.key === "-" || e.key === "/" || e.key === "%") {
     clickOperation(e.key);
   } else if (e.key === "*") {
     clickOperation("x");
-    // console.log(e.key)
-  } else if (e.key == "Enter" || e.key === "=") {
+  } else if (e.key === "Enter" || e.key === "=") {
     clickEqual();
   }
-  // console.log(e.key)
+  event.preventDefault();
 });
 function clickButtonEl(key) {
   numbersEl.forEach((button) => {
@@ -134,12 +135,5 @@ function clickOperation(key) {
 }
 function clickEqual() {
   equalEl.click();
-}
-
-function convertToTime() {
-  let hours = parseFloat(Math.floor(display2El.value / 60));
-  let minutes = parseFloat(display2El.value % 60);
-  let message =
-    (display2El.innerHTML = `${hours} hours and ${minutes} minutes`);
-  return message;
+  event.preventDefault();
 }
